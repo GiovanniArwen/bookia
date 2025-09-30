@@ -4,7 +4,7 @@ import 'package:bookia/features/home/presentation/cubit/home_state.dart';
 import 'package:bookia/features/home/presentation/widgets/all_books_builder.dart';
 import 'package:bookia/features/home/presentation/widgets/best_seller_builder.dart';
 import 'package:bookia/features/home/presentation/widgets/new_arrivals_builder.dart';
-import 'package:bookia/features/home/presentation/widgets/slider.dart';
+import 'package:bookia/features/home/presentation/widgets/home_slider.dart';
 import 'package:flutter/material.dart' hide Slider;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Gap(20),
-                    HomeSlider(),
+                    HomeSlider(sliders: cubit.sliders,),
                     Gap(20),
                     BestSellerBuilder(products: cubit.bestSellers),
                     Gap(20),

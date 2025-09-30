@@ -1,13 +1,13 @@
-import 'package:bookia/core/constants/app_assets.dart';
 import 'package:bookia/core/utils/colors.dart';
+import 'package:bookia/features/home/data/models/slider_response/slider.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeSlider extends StatefulWidget {
-  const HomeSlider({super.key});
-
+  const HomeSlider({super.key, required this.sliders});
+  final List<SliderModel> sliders;
   @override
   State<HomeSlider> createState() => _HomeSliderState();
 }
@@ -21,11 +21,11 @@ class _HomeSliderState extends State<HomeSlider> {
 
   CarouselSlider buildSlider() {
     return CarouselSlider.builder(
-      itemCount: 3,
-      itemBuilder: (context, index, realIndex) => ClipRRect(
+      itemCount: widget.sliders.length,
+      itemBuilder: (BuildContext context,int index,int realIndex) => ClipRRect(
         borderRadius: BorderRadius.circular(10),
-        child: Image.asset(
-          AppAssets.background,
+        child: Image.network(
+          widget.sliders[index].image ?? '',
           fit: BoxFit.cover,
           width: double.infinity,
         ),
@@ -52,7 +52,7 @@ class _HomeSliderState extends State<HomeSlider> {
   SmoothPageIndicator buildIndicator() {
     return SmoothPageIndicator(
       controller: PageController(initialPage: _currentIndex),
-      count: 3,
+      count: widget.sliders.length,
       effect: ExpandingDotsEffect(
         dotColor: AppColors.accentColor,
         dotHeight: 7,

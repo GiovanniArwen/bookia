@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class HomeCubit extends Cubit<HomeState> {
   HomeCubit() : super(HomeInital());
 
-  List<Slider> slider = [];
+  List<SliderModel> sliders = [];
   List<Product> bestSellers = [];
   List<Product> newArrivals = [];
   List<Product> allbooks = [];
@@ -31,7 +31,7 @@ class HomeCubit extends Cubit<HomeState> {
       ]);
       log('-----3-----');
 
-      slider = (res[0] as SliderResponse).data?.sliders??  [];
+      sliders = (res[0] as SliderResponse).data?.sliders??  [];
       bestSellers = (res[1] as BookListResponse).data?.products ?? [];
       newArrivals = (res[2] as BookListResponse).data?.products ?? [];
       allbooks = (res[3] as BookListResponse).data?.products ?? [];

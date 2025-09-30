@@ -1,10 +1,10 @@
-class Slider {
+class SliderModel {
   String? image;
 
-  Slider({this.image});
+  SliderModel({this.image});
 
-  factory Slider.fromJson(Map<String, dynamic> json) =>
-      Slider(image: json['image'] as String?);
+  factory SliderModel.fromJson(Map<String, dynamic> json) =>
+      SliderModel(image: json['image'] as String?);
 
   Map<String, dynamic> toJson() => {'image': image};
 }
