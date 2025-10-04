@@ -5,6 +5,8 @@ import 'package:bookia/features/auth/presentation/page/otp/OTP.dart';
 import 'package:bookia/features/auth/presentation/page/register/register.dart';
 import 'package:bookia/features/auth/presentation/page/reset_password/reset_password.dart';
 import 'package:bookia/features/auth/presentation/page/successPassword/success_password.dart';
+import 'package:bookia/features/home/data/models/book_list_response/product.dart';
+import 'package:bookia/features/home/presentation/details/page/book_details.dart';
 import 'package:bookia/features/main/presentation/page/main_screen.dart';
 import 'package:bookia/features/splash/splash.dart';
 import 'package:bookia/features/welcome/welcome.dart';
@@ -20,7 +22,8 @@ class Routes {
   static const String forgetPassword = "/forget_password";
   static const String otp = "/OTP";
   static const String resetPassword = "/reset_password";
-  static const String success_password = "/success_password";
+  static const String successPassword = "/success_password";
+  static const String bookDetails = "/book_details";
 
   static final routes = GoRouter(
     routes: [
@@ -66,7 +69,7 @@ class Routes {
         },
       ),
       GoRoute(
-        path: success_password,
+        path: successPassword,
         builder: (context, state) {
           return BlocProvider(
             create: (context) => AuthCubit(),
@@ -76,6 +79,16 @@ class Routes {
       ),
 
       GoRoute(path: main, builder: (context, state) => MainScreen()),
+      GoRoute(
+        path: bookDetails,
+        builder: (context, state) {
+          var args = state.extra as Map<String, dynamic>;
+          return BookDetails(
+            product: args["product"] as Product,
+            source: args["source"] as String,
+          );
+        },
+      ),
     ],
   );
 }

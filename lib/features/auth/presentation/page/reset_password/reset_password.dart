@@ -94,7 +94,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                     confirm,
                   );
                   if (success) {
-                    context.pushReplacement(Routes.success_password);
+                    context.pushReplacement(Routes.successPassword);
                   } else {
                     showerror(context, "Failed to reset password");
                   }

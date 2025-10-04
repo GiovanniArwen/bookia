@@ -1,10 +1,10 @@
 import 'package:bookia/core/constants/app_assets.dart';
 import 'package:bookia/features/home/presentation/cubit/home_cubit.dart';
 import 'package:bookia/features/home/presentation/cubit/home_state.dart';
-import 'package:bookia/features/home/presentation/widgets/all_books_builder.dart';
-import 'package:bookia/features/home/presentation/widgets/best_seller_builder.dart';
-import 'package:bookia/features/home/presentation/widgets/new_arrivals_builder.dart';
-import 'package:bookia/features/home/presentation/widgets/home_slider.dart';
+import 'package:bookia/features/home/presentation/home/widgets/all_books_builder.dart';
+import 'package:bookia/features/home/presentation/home/widgets/best_seller_builder.dart';
+import 'package:bookia/features/home/presentation/home/widgets/new_arrivals_builder.dart';
+import 'package:bookia/features/home/presentation/home/widgets/home_slider.dart';
 import 'package:flutter/material.dart' hide Slider;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';

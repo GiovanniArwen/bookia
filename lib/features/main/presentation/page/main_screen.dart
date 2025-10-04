@@ -1,6 +1,6 @@
 import 'package:bookia/core/constants/app_assets.dart';
 import 'package:bookia/core/utils/colors.dart';
-import 'package:bookia/features/home/presentation/page/home_screen.dart';
+import 'package:bookia/features/home/presentation/home/page/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

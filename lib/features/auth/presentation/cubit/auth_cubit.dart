@@ -15,10 +15,12 @@ class AuthCubit extends Cubit<AuthState> {
 
   login() async {
     emit(AuthLoadingState());
+
     var params = AuthParams(
       email: emailController.text,
       password: passwordController.text,
     );
+
     var response = await Authrepo.login(params);
     if (response != null) {
       emit(AuthSuccessState());
@@ -29,12 +31,14 @@ class AuthCubit extends Cubit<AuthState> {
 
   register() async {
     emit(AuthLoadingState());
+
     var params = AuthParams(
+      name: usernameController.text,
       email: emailController.text,
       password: passwordController.text,
-      name: usernameController.text,
       passwordConfirmation: passwordConfirmationController.text,
     );
+
     var response = await Authrepo.register(params);
     if (response != null) {
       emit(AuthSuccessState());

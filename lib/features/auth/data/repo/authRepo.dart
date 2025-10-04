@@ -2,9 +2,9 @@ import 'dart:developer';
 
 import 'package:bookia/features/auth/data/models/request/auth_params.dart';
 import 'package:bookia/features/auth/data/models/response/auth_response/auth_response.dart';
-import 'package:bookia/services/api/api_endpoints.dart';
-import 'package:bookia/services/api/dio_provider.dart';
-import 'package:bookia/services/local/local_helper.dart';
+import 'package:bookia/core/services/api/api_endpoints.dart';
+import 'package:bookia/core/services/api/dio_provider.dart';
+import 'package:bookia/core/services/local/local_helper.dart';
 import 'package:dio/dio.dart';
 
 class Authrepo {

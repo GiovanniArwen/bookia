@@ -1,6 +1,6 @@
 import 'package:bookia/core/utils/textstyles.dart';
 import 'package:bookia/features/home/data/models/book_list_response/product.dart';
-import 'package:bookia/features/home/presentation/widgets/book_card.dart';
+import 'package:bookia/features/home/presentation/home/widgets/book_card.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -34,7 +34,7 @@ class AllBooksBuilder extends StatelessWidget {
           ),
           itemCount: products.length,
           itemBuilder: (context, index) {
-            return BookCard(product: products[index]);
+            return BookCard(product: products[index],source: 'all',);
           },
         ),
       ],

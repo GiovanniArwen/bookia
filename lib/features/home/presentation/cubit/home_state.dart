@@ -6,4 +6,12 @@ class HomeLoading extends HomeState {}
 
 class HomeLoaded extends HomeState {}
 
-class HomeError extends HomeState {}
+class HomeError extends HomeState {
+  final String message;
+  HomeError({required this.message});
+}
+
+class WishlistCartSuccessState extends HomeState {
+  final String message;
+  WishlistCartSuccessState({required this.message});
+}
