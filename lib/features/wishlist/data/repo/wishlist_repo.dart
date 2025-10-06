@@ -5,13 +5,11 @@ import 'package:bookia/core/services/local/local_helper.dart';
 import 'package:bookia/features/wishlist/data/models/wishlist_response/wishlist_response.dart';
 
 class WishlistRepo {
-
-
   static Future<WishlistResponse?> getWishlistBooks() async {
     try {
+      print("Saved token: ${LocalHelper.pref.getString('token')}");
       var res = await DioProvider.get(
         endpoint: ApiEndpoints.wishlist,
-
         headers: {
           "Authorization": "Bearer ${LocalHelper.getUserData()?.token}",
         },
@@ -33,10 +31,12 @@ class WishlistRepo {
       return null;
     }
   }
-    static Future<WishlistResponse?> addToWishlist({
+
+  static Future<WishlistResponse?> addToWishlist({
     required int productId,
   }) async {
     try {
+      print("Saved token: ${LocalHelper.pref.getString('token')}");
       var res = await DioProvider.post(
         endpoint: ApiEndpoints.addToWishlist,
         data: {"product_id": productId},
@@ -54,6 +54,7 @@ class WishlistRepo {
       return null;
     }
   }
+
   static Future<WishlistResponse?> removeFromWishlist({
     required int productId,
   }) async {
@@ -61,6 +62,9 @@ class WishlistRepo {
       var res = await DioProvider.post(
         endpoint: ApiEndpoints.removeFromWishlist,
         data: {"product_id": productId},
+        headers: {
+          "Authorization": "Bearer ${LocalHelper.getUserData()?.token}",
+        },
       );
 
       if (res.statusCode == 200) {

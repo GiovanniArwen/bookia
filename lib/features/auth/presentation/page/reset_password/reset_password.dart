@@ -81,11 +81,11 @@ class _ResetPasswordState extends State<ResetPassword> {
                   final confirm = ConfirmController.text.trim();
                   final otpcode = widget.otp;
                   if (pass.isEmpty || confirm.isEmpty) {
-                    showerror(context, "Please enter password");
+                    showMyDialog(context, "Please enter password");
                     return;
                   }
                   if (pass != confirm) {
-                    showerror(context, "Passwords do not match");
+                    showMyDialog(context, "Passwords do not match");
                     return;
                   }
                   final success = await Authrepo.resetPassword(
@@ -96,7 +96,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   if (success) {
                     context.pushReplacement(Routes.successPassword);
                   } else {
-                    showerror(context, "Failed to reset password");
+                    showMyDialog(context, "Failed to reset password");
                   }
                 },
               ),

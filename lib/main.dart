@@ -8,8 +8,6 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Future.value([DioProvider.init(), LocalHelper.init()]);
-  await DioProvider.init();
-  await LocalHelper.init();
   runApp(const MainApp());
 }
 

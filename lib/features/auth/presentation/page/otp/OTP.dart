@@ -72,7 +72,7 @@ class _OtpState extends State<Otp> {
                     fontsize: 12,
                     onPressed: () async {
                       if (otpcode.isEmpty) {
-                        showerror(context, "Please enter OTP code");
+                        showMyDialog(context, "Please enter OTP code");
                         return;
                       }
                       final isvalid = await Authrepo.verifyOtp(
@@ -82,7 +82,7 @@ class _OtpState extends State<Otp> {
                       if (isvalid) {
                         context.push(Routes.resetPassword, extra: otpcode);
                       } else {
-                        showerror(context, 'Failed to send OTP');
+                        showMyDialog(context, 'Failed to send OTP');
                       }
                     },
                   ),

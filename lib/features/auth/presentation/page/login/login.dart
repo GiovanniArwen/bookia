@@ -40,7 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
       PushAndRemoveUntil(context, Routes.main);
     } else if (state is AuthErrorState) {
       Pop(context);
-      showerror(context, state.error);
+      showMyDialog(context, state.error);
     } else {
       showloading(context);
     }

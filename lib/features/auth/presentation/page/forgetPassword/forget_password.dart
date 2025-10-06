@@ -64,7 +64,7 @@ class ForgetPassword extends StatelessWidget {
                       if (success) {
                         context.push(Routes.otp, extra: email);
                       } else {
-                        showerror(context, 'Failed to send OTP');
+                        showMyDialog(context, 'Failed to send OTP');
                       }
                     },
                   ),

@@ -1,4 +1,5 @@
 import 'package:bookia/core/services/api/api_endpoints.dart';
+import 'package:bookia/core/services/local/local_helper.dart';
 import 'package:dio/dio.dart';
 
 class DioProvider {
@@ -6,6 +7,21 @@ class DioProvider {
 
   static init() {
     dio = Dio(BaseOptions(baseUrl: ApiEndpoints.baseUrl));
+    dio.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) async {
+          final token = LocalHelper.pref.getString('token');
+          if (token != null && token.isNotEmpty) {
+            options.headers['Authorization'] = 'Bearer $token';
+          }
+
+          print("🛰 Headers sent: ${options.headers}");
+          print("📦 Token used: $token");
+
+          return handler.next(options);
+        },
+      ),
+    );
   }
 
   static Future<Response> post({

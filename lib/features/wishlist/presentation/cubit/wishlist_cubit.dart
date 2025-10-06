@@ -21,4 +21,15 @@ class WishlistCubit extends Cubit<WishlistState> {
       }
     });
   }
+    removeFromWishlist(int productId) {
+    emit(WishlistLoadingState());
+    WishlistRepo.removeFromWishlist(productId: productId).then((value) {
+      if (value == null) {
+        emit(WishlistErrorState(message: "Something went wrong"));
+      } else {
+        books = value.data?.data ?? [];
+        emit(WishlistSuccessState());
+      }
+    });
+  }
 }

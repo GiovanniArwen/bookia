@@ -5,6 +5,7 @@ class HomeInital extends HomeState {}
 class HomeLoading extends HomeState {}
 
 class HomeLoaded extends HomeState {}
+class AddToWishlistSuccessState extends HomeState {}
 
 class HomeError extends HomeState {
   final String message;
