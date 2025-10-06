@@ -7,9 +7,8 @@ import 'package:bookia/core/services/api/dio_provider.dart';
 class HomeRepo {
   static Future<SliderResponse?> getSliders() async {
     try {
-      
       var res = await DioProvider.get(endpoint: ApiEndpoints.sliders);
-      
+
       if (res.statusCode == 200) {
         return SliderResponse.fromJson(res.data);
       } else {
@@ -28,11 +27,9 @@ class HomeRepo {
       );
       if (res.statusCode == 200) {
         return BookListResponse.fromJson(res.data);
-        
       } else {
         return null;
       }
-      
     } on Exception catch (e) {
       log(e.toString());
       return null;
@@ -57,7 +54,6 @@ class HomeRepo {
   }
 
   static Future<BookListResponse?> getAllBooks([int pageIndex = 1]) async {
-
     try {
       var res = await DioProvider.get(
         endpoint: ApiEndpoints.allProducts,

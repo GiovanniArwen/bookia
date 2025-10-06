@@ -1,6 +1,7 @@
 import 'package:bookia/core/constants/app_assets.dart';
 import 'package:bookia/core/utils/colors.dart';
 import 'package:bookia/features/home/presentation/home/page/home/home_screen.dart';
+import 'package:bookia/features/wishlist/presentation/page/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -13,19 +14,24 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   int currentindex = 0;
+  List<Widget> screens = [HomeScreen(), WishlistScreen(),HomeScreen(),HomeScreen()];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: HomeScreen(), bottomNavigationBar: navigationBar());
+    return Scaffold(
+      body: screens[currentindex],
+      bottomNavigationBar: navigationBar(),
+    );
   }
 
   BottomNavigationBar navigationBar() {
     return BottomNavigationBar(
-      backgroundColor: AppColors.accentColor,
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
-      type: BottomNavigationBarType.fixed,
+      // backgroundColor: AppColors.accentColor,
+      // showSelectedLabels: false,
+      // showUnselectedLabels: false,
+      // type: BottomNavigationBarType.fixed,
       items: [
         BottomNavigationBarItem(
+          icon: SvgPicture.asset(AppAssets.home),
           activeIcon: SvgPicture.asset(
             AppAssets.home,
             colorFilter: ColorFilter.mode(
@@ -33,7 +39,6 @@ class _MainScreenState extends State<MainScreen> {
               BlendMode.srcIn,
             ),
           ),
-          icon: SvgPicture.asset(AppAssets.home),
           label: 'Home',
         ),
         BottomNavigationBarItem(
@@ -71,8 +76,11 @@ class _MainScreenState extends State<MainScreen> {
         ),
       ],
       currentIndex: currentindex,
-      onTap: (value) {
-        currentindex = value;
+      onTap: (index) {
+        setState(() {
+          currentindex = index;
+        });
+        
       },
     );
   }

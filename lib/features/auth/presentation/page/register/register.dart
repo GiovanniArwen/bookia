@@ -63,7 +63,10 @@ class _RegisterState extends State<Register> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hello! Register to get\nstarted', style: TextStyles.size30()),
+              Text(
+                'Hello! Register to get\nstarted',
+                style: TextStyles.size30(),
+              ),
               Gap(30),
               Customtextfield(
                 controller: cubit.usernameController,

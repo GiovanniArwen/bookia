@@ -29,9 +29,13 @@ class SuccessPassword extends StatelessWidget {
               style: TextStyles.size16(color: AppColors.greyColor),
             ),
             Gap(40),
-            MainButton(text: 'Back to Login', fontsize: 12, onPressed: () {
-              PushAndRemoveUntil(context, Routes.login);
-            }),
+            MainButton(
+              text: 'Back to Login',
+              fontsize: 12,
+              onPressed: () {
+                PushAndRemoveUntil(context, Routes.login);
+              },
+            ),
           ],
         ),
       ),

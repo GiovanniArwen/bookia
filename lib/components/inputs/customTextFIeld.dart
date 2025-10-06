@@ -8,7 +8,8 @@ class Customtextfield extends StatefulWidget {
     required this.controller,
     this.hintText,
     this.validator,
-    this.isPassword = false, this.onchanged,
+    this.isPassword = false,
+    this.onchanged,
   });
   final TextEditingController controller;
   final String? hintText;
@@ -26,7 +27,7 @@ class _CustomtextfieldState extends State<Customtextfield> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      onChanged: (value){
+      onChanged: (value) {
         if (widget.onchanged != null) {
           widget.onchanged!(value);
         }

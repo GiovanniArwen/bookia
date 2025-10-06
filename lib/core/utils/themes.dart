@@ -7,14 +7,16 @@ class AppThemes {
   static get lightTheme => ThemeData(
     scaffoldBackgroundColor: AppColors.whiteColor,
     appBarTheme: AppBarTheme(
+      centerTitle: true,
       backgroundColor: Colors.white,
       foregroundColor: AppColors.primaryColor,
       surfaceTintColor: Colors.transparent,
       titleTextStyle: TextStyles.size26(
-        color: AppColors.primaryColor,
+        color:AppColors.darkColor,
         fontSize: 24,
-      ),
+      ).copyWith(fontFamily: Appfonts.dM)
     ),
+    
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       type: BottomNavigationBarType.fixed,
       backgroundColor: AppColors.whiteColor,

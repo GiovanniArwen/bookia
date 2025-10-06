@@ -3,9 +3,7 @@ import 'package:bookia/core/routes/navigation.dart';
 import 'package:flutter/material.dart';
 
 class AppBarwithBack extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarwithBack({
-    super.key, this.actions,
-  });
+  const AppBarwithBack({super.key, this.actions});
   final Widget? actions;
   @override
   Widget build(BuildContext context) {
@@ -21,7 +19,7 @@ class AppBarwithBack extends StatelessWidget implements PreferredSizeWidget {
       actions: [actions ?? const SizedBox()],
     );
   }
-  
+
   @override
   // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);

@@ -18,6 +18,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   initState() {
     Future.delayed(const Duration(seconds: 3), () {
+      // final token = LocalHelper.getToken();
+      // print("🟢 Current Token: $token");
       if (!mounted) return;
       var userData = LocalHelper.getUserData();
       pushWithRelacement(context, Routes.welcome);

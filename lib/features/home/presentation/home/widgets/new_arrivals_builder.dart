@@ -28,7 +28,7 @@ class NewArrivalsBuilder extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return BookCard(product: products[index],source: 'new',);
+              return BookCard(product: products[index], source: 'new');
             },
             separatorBuilder: (context, index) {
               return Gap(10);

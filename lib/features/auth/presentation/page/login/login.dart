@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:  AppBarwithBack(),
+      appBar: AppBarwithBack(),
       body: BlocListener<AuthCubit, AuthState>(
         listener: blocListener,
         child: loginBody(),

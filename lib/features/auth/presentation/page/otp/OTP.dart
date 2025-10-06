@@ -80,7 +80,7 @@ class _OtpState extends State<Otp> {
                         otpcode,
                       );
                       if (isvalid) {
-                        context.push(Routes.resetPassword, extra: otpcode,);
+                        context.push(Routes.resetPassword, extra: otpcode);
                       } else {
                         showerror(context, 'Failed to send OTP');
                       }

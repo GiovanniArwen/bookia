@@ -6,7 +6,6 @@ import 'package:bookia/features/home/data/models/slider_response/slider.dart';
 import 'package:bookia/features/home/data/models/slider_response/slider_response.dart';
 import 'package:bookia/features/home/data/repo/home_repo.dart';
 import 'package:bookia/features/home/presentation/cubit/home_state.dart';
-import 'package:bookia/core/services/local/local_helper.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeCubit extends Cubit<HomeState> {

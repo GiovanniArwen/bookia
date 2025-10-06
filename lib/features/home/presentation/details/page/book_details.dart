@@ -35,7 +35,7 @@ class BookDetails extends StatelessWidget {
       appBar: AppBarwithBack(
         actions: IconButton(
           onPressed: () {
-          // cubit.addRemoveToWishlist(product.id ?? 0);
+            // cubit.addRemoveToWishlist(product.id ?? 0);
           },
           icon: SvgPicture.asset(
             AppAssets.bookmark,
@@ -49,7 +49,6 @@ class BookDetails extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        
         child: Padding(
           padding: const EdgeInsets.all(20),
           child: Center(
@@ -66,9 +65,8 @@ class BookDetails extends StatelessWidget {
                   ),
                 ),
                 Gap(20),
-                
+
                 Text(
-                  
                   product.name ?? '',
                   textAlign: TextAlign.justify,
                   style: TextStyles.size16(),
@@ -100,7 +98,7 @@ class BookDetails extends StatelessWidget {
                 '\$${product.price}',
                 style: TextStyles.size26(fontSize: 24),
               ),
-              
+
               Gap(40),
               Expanded(
                 child: MainButton(

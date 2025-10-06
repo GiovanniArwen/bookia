@@ -11,7 +11,7 @@ pushWithRelacement(BuildContext context, String route, {Object? extra}) {
 }
 
 PushAndRemoveUntil(BuildContext context, String route, {Object? extra}) {
-  return context.go(route,extra: extra);
+  return context.go(route, extra: extra);
 }
 
 Pop(BuildContext context) {

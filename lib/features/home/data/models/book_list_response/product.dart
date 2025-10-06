@@ -51,6 +51,5 @@ class Product {
     'best_seller': bestSeller,
     'image': image,
     'category': category,
-    
   };
 }

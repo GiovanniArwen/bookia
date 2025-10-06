@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Gap(20),
-                    HomeSlider(sliders: cubit.sliders,),
+                    HomeSlider(sliders: cubit.sliders),
                     Gap(20),
                     BestSellerBuilder(products: cubit.bestSellers),
                     Gap(20),

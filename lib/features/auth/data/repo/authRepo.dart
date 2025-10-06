@@ -63,6 +63,8 @@ class Authrepo {
       if (resp.statusCode == 200) {
         var data = AuthResponse.fromJson(resp.data);
         await LocalHelper.setUserData(data.data);
+        await LocalHelper.setToken(data.data?.token);
+        log("🔐 Token Saved: ${data.data?.token}");
         return data;
         //success and return userdata data as json
         // await LocalHelper.setUserData(data.data);
@@ -71,7 +73,7 @@ class Authrepo {
         return null;
       }
     } on Exception catch (e) {
-      log(e.toString());
+      log("❌ Login Error: $e");
       return null;
     }
   }

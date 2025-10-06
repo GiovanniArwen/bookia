@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:bookia/features/auth/data/models/response/auth_response/data.dart';
+import 'package:bookia/features/auth/data/models/response/auth_response/user.dart';
 import 'package:bookia/features/home/data/models/book_list_response/product.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,9 +9,18 @@ class LocalHelper {
 
   static String kUserData = 'user_data';
   static String kWishlist = 'wishlist';
-
+  static String kToken = 'token';
   static init() async {
     pref = await SharedPreferences.getInstance();
+  }
+
+  static setToken(String? token) async {
+    if (token == null) return;
+    await pref.setString(kToken, token);
+  }
+
+  static String? getToken() {
+    return pref.getString(kToken);
   }
 
   static setUserData(UserData? userData) async {

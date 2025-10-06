@@ -52,7 +52,6 @@ class ForgetPassword extends StatelessWidget {
                       }
                       return null;
                     },
-
                   ),
                   Gap(30),
                   MainButton(

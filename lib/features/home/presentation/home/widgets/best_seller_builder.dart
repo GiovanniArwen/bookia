@@ -27,7 +27,7 @@ class BestSellerBuilder extends StatelessWidget {
           child: ListView.separated(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return BookCard(product: products[index],source: 'best',);
+              return BookCard(product: products[index], source: 'best');
             },
             separatorBuilder: (context, index) {
               return Gap(10);
